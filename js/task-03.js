@@ -13,19 +13,17 @@ const images = [
   },
 ];
 
-const ulGallary = document.querySelector(".gallery");
-// console.log(ulElem);
+const ulElem = document.querySelector("ul");
 
-// const liElem = document.createElement("li");
+const imgElem = images
+  .map((image) => `<li><img src="${image.url}", alt="${image.alt}", width="370"><li>`)
+  .join("");
 
-// liElem = images.map((image) => `url: ${image.url}, alt ${image.alt}`)
-// console.log(liElem);
+ulElem.insertAdjacentHTML("beforeend", imgElem);
 
+console.log(ulElem);
 
-
-for (const image of images) {
-  const liElem = document.createElement("li");
-  liElem.textContent = image;
-  console.log(liElem);
-}
+ulElem.style.display = 'flex';
+ulElem.style.gap = '8px';
+ulElem.style.width = '10px';
 
