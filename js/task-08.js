@@ -4,12 +4,12 @@ formElem.addEventListener("submit", formSubmit)
 
 function formSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget)
-    console.log(formData);
-    formData.forEach((value, name) => {
-        console.log("name", name)
-        console.log("value", value);
-    })
+    // const formData = new FormData(event.currentTarget)
+    // console.log(formData);
+    // formData.forEach((value, name) => {
+    //     console.log("name", name)
+    //     console.log("value", value);
+    // })
 
     const {
         elements: { email, password },
@@ -18,5 +18,8 @@ function formSubmit(event) {
     if (email.value === "" || password.value === "") {
         return alert("Усі поля форми мають бути заповненими!")
     }
+
+    console.log({ email: email.value, password: password.value });
+    event.currentTarget.reset();
 }
 
